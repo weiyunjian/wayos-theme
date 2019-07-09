@@ -7,20 +7,7 @@
     <meta name="viewport"
         content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <script>
-        function parseQuery(query) {
-            var list = {},
-                rc = query
-
-            rc &&
-                rc.split('&').forEach(function (query) {
-                    var parts = query.split('=')
-                    list[parts.shift().trim()] = decodeURIComponent(parts.join('='))
-                })
-
-            return list
-        }
-        queryString = parseQuery(document.location.search.substring(1))
-        location.href = 'https://portal.ik.weiyunjian.com/v3/{NAS标识符替换}?auth_url=' + encodeURIComponent(document.location.origin) + '&ip=' + queryString.ip + '&mac=ff:ff:ff:ff:ff:ff';
+        location.href = 'https://portal.ik.weiyunjian.com/v3/{NAS标识符替换}?auth_url=' + encodeURIComponent(document.location.origin) + '&ip=127.0.0.1&mac=ff:ff:ff:ff:ff:ff';
     </script>
 <body>
     <h1>跳转中...</h1>
