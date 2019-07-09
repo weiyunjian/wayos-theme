@@ -1,0 +1,29 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <script>
+        function parseQuery(query) {
+            var list = {},
+                rc = query
+
+            rc &&
+                rc.split('&').forEach(function (query) {
+                    var parts = query.split('=')
+                    list[parts.shift().trim()] = decodeURIComponent(parts.join('='))
+                })
+
+            return list
+        }
+        queryString = parseQuery(document.location.search)
+        location.href = 'https://portal.ik.weiyunjian.com/v3/{NAS标识符替换}?auth_url=' + encodeURIComponent(document.location.origin) + '&ip=' + queryString.ip + '&mac=ff:ff:ff:ff:ff:ff';
+    </script>
+<body>
+    <h1>跳转中...</h1>
+</body>
+
+</html>
