@@ -19,7 +19,7 @@
 
             return list
         }
-        queryString = parseQuery(document.location.search)
+        queryString = parseQuery(document.location.search.substring(1))
         location.href = 'https://portal.ik.weiyunjian.com/v3/{NAS标识符替换}?auth_url=' + encodeURIComponent(document.location.origin) + '&ip=' + queryString.ip + '&mac=ff:ff:ff:ff:ff:ff';
     </script>
 <body>
